@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>height/ width/inner height/outerwidth 메소드</title>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            
+        }
+        body {
+            line-height: 1;
+        }
+        #wrap {
+            height: 5000px;
+            padding: 200px;
+        }
+        
+        
+    </style>
+</head>
+<body>
+
+   <div id="wrap">
+       <h1> scrollTop()/scrollLeft()</h1>>
+       
+   </div>
+   <p class="txt1"> 절대 탑 위치 값:<span></span></p>
+   <p class="txt2"> 상대 탑 위치 값:<span></span></p>
+
+   <script>
+       $(function() {
+           //h1 요소의 브라우저로 부터 절대 탑 값  - 패딩 + 부모요소의 마진 탑:2000px
+           var topNum=$("h1").offset().top;
+           console.log(topNum);
+           //수직 스크롤 위치 변경 - 2000px
+           $(window).scrollTop(topNum);
+            // 현재 수직 스크롤 위치 값 -2000px
+           var sct = $(window).scrollTop();
+           console.log(sct);           
+         
+   </script>
+
+           
+    
+</body>
+</html>

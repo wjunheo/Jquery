@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>단독 이벤트 등록/그룹 이벤트 등록</title>
+</head>
+<body>
+    <p>
+        <button class="btn1">버튼1</button>
+    </p>
+    <p> 내용 1</p>
+    <p>
+        <button class="btn2">버튼2</button>
+    </p>
+    <p>내용2</p>
+    <script>
+        $(".btn1").click(function(){
+            //btn1 부모요소의 다음 요소 (내용1)의 글자색 빨간색으로 변경
+            $(".btn").parent().next().css({
+                "color": "red"
+            });
+        });
+        //그룹 이벤트 등록
+        $(".btn2").on({
+            //btn2 에 마우스 커서가 올라가거나 focus가 갔을 때 동작
+            "mouseover focus" : function() {
+                //btn2 부모요소의 다음 요소(내용2)의 글자색 초록색으로 변경
+                $(".btn").parent().next().css({
+                    "color": "green"
+                });
+
+            },
+          //btn2 에 마우스 커서가 올라가거나 focus가 빠져나갔을 때 동작
+            "mouseout blur" : function() {
+         //btn2 부모요소의 다음 요소(내용2)의 글자색 검은색으로 변경
+
+                $(".btn2").parent().next().css({
+                    "color":"black"
+                })
+            }
+        })
+    </script>
+    
+</body>
+</html>
