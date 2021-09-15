@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>befor()/insertBefore ()/after 메소드</title>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    
+</head>
+<body>
+
+   <div id="wrap">
+       <p1>내용1</p1>
+       <p1>내용2</p1>
+       <p1>내용3</p1>
+       
+   </div>
+   
+
+   <script>
+       $(function() {
+           //p요소 중 인덱스가 2인 요소 다음에 새로운 피요소 추가 -냐용 3다음에 추가
+          $("#wrap p:eq(2)").after("<p>After</p>");
+           //p요소 중 인덱스가 2인 요소 다음에 새로운 피요소 추가 -냐용 2다음에 추가
+
+          $("<p>insertAfter</p>").insertAfter("#wrap p:eq(1)");
+         //p요소 중 인덱스가 1인 요소 이전에 새로운 피요소 추가 -냐용 2다음에 추가
+
+          $("#wrap p:eq(1)").before("<p>Before</p>");
+         //p요소 중 인덱스가 0인 요소 이전에 새로운 피요소 추가 -냐용 1이전에 추가
+
+          $("<p>insertBefore</p>").insertBefore("#wrap p:eq(0)");
+       });
+   </script>
+
+           
+    
+</body>
+</html>

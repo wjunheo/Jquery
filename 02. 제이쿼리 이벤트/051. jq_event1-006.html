@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mouseover()/mouseout()/houver()메소드</title>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <p>
+        <a href="http://www.esaypub.co.kr" target="_blank" class="btn2">버튼2</a>
+
+    
+    </p>
+    <script>
+        $(function(){
+            $(".btn1").on({
+                //btn1 mouseover 이벤트 등록
+                "mouseover": function() {
+                    $(".txt1").css({
+                        "background-color" :"yellow"
+                    });
+                },
+                //btn1 mouseout 이벤트 등록
+                "mouseout": function(){
+                    $(".txt1").css({
+                        "background-color" :"none"
+                    });
+                }
+            
+            });
+            //btn2 houver  이벤트 등록
+            $(".btn2").hover(
+                //mouseover 시 동작
+                function() {
+                    $(".txt2").css({
+                        "background-color" :"aqua"
+                    });
+                },
+                //mouseout 시동작
+                function(){
+                    $(".txt2").css({
+                        "background-color": "none"
+                    });
+                }
+            );
+        });
+    </script>
+</body>
+</html>
