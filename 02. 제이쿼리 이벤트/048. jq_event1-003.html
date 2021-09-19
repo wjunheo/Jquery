@@ -4,30 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ready /load 메소드</title>
+    <title>이벤트 제거</title>
     <script src="../js/jquery-3.6.0.min.js"></script>
 </head>
 <body>
-
-        <img src="http://place-hold.it/300x300" class="img1">
+    <p>
+        <button class="btn1">버튼1</button>
     </p>
-    <script>
-        $(function(){
-            //$document.ready html 웹문서가 모두 로드 완료된 후에 실행
-            // 외부 연결 파일들은 로드된 상태가 아님
-            $(document).ready(function(){
-                //외부 연결 이미지가 로드된 상태가 아니여서 height=0
-                var h1=$(".img1").height();
-                console.log("ready:"+h1);
-            });
-            //$(window).om("load")외부 연결 파일이 모두 로드 완료된 후에 실행
-            $(window).on("load",function(){
-                //외부 연결 이미지가 로드된 상태이므로 height=300
-                var h2 =$(".img1").height();
-                console.log("load:"+h2);
-            });
-        });
-    </script>
     <p>내용1</p>
     <p>
         <button class="btn2">버튼2</button>
@@ -61,10 +44,10 @@
             }
         });
 
-        //btn1 강제 클릭 이벤트 발생
-        $(".btn1").click();
-        //btn2 강제 mouseover 이벤트 발생
-        $(".btn2").trigger("mouseover");
+        //btn1 클릭 이벤트 제거
+        $(".btn1").off("click");
+        //btn2 mouseover, focus 이벤트 제거
+        $(".btn2").off("mouseover focus");
     });
     </script>
 </body>

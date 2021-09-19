@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animation()메소그</title>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    
+</head>
+<body>
+    <p>
+        <p><button class="btn1">버튼1</button></p>
+        <span class="txt1">500px이동</span>
+        <p><button class="btn1">버튼2</button></p>
+        <span class="txt1">50px이동</span>
+
+    </p>
+   
+    <script>
+        $(function() {
+            $(".btn1").on("click", function() {
+                   //txt1요소에 marginleft 500px ,fontsize 30px 변화는 효과
+                   //2초동안 효과 지속 일정한 속도로 완료되면 알림창 띄움
+                $(".txt1").animate({
+                    marginleft:"500px",
+                    fontslize:"30px"
+                },
+                2000,"liner",function(){
+                    alert("모션 완료");
+                
+                });
+            
+                });
+            });
+            //.btn2 요소 클릭 시 .box요소 fadeIn - 점점 선명해지는 효과
+            $(".btn1").on("click", function() {
+                   //txt1요소에 marginleft 50px  변화는 효과
+                   //2초동안 효과 지속 일정한 속도로 완료되면 알림창 띄움
+                $(".txt3").animate({
+                    marginleft:"+=50px",
+                    
+
+                });
+            });
+    </script>
+</body>
+</html>

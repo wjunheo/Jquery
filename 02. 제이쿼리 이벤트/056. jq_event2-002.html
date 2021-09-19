@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>키보드 접근성 배려</title>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+   
+</head>
+<body>
+    <p><button id="btn1">버튼1</button></p>
+    <p><button id="btn2">버튼2</button></p>
+    <p class="txt"></p>
+    <script>
+        $(function() {
+            //data(): 해당 요소에 키 벨류 로 객체 데이터 생성
+            $("#btn1").data({
+                "text":"hello",
+                
+                },
+                //user_id_1, user_name_1 요소에서 포커스가 빠져나가면 배경색 흰색으로 변경
+                "blur" : function() {
+                    $(this).css({
+                        "background-color" : "#fff"
+                    });
+                }
+            });
+
+            $("#frm2").on({
+                //frm2 요소에 포커스가 가면 배경색 분홍색으로 변경
+                "focusin" : function() {
+                    $(this).css({
+                        "background-color" : "pink"
+                    });
+                },
+                //frm2 요소에서 포커스가 빠져나가면 배경색 분홍색으로 변경
+                "focusout" : function() {
+                    $(this).css({
+                        "background-color" : "#fff"
+                    });
+                }
+            });
+            //user_id_1 요소에 강제 포커스 발생
+            $("#user_id_1").focus();
+        });
+    </script>
+</body>
+</html>
